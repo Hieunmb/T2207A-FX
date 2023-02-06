@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Thu">
+   <children>
+      <TextField fx:id="txtNguoiNhan" layoutX="55.0" layoutY="61.0" promptText="Nguoi Nhan" />
+      <TextField fx:id="txtTieuDe" layoutX="55.0" layoutY="98.0" promptText="Tieu de" />
+      <TextArea fx:id="txtNoiDung" layoutX="29.0" layoutY="151.0" prefHeight="200.0" prefWidth="200.0" promptText="Noi dung" />
+      <Text fx:id="txtInfor" layoutX="349.0" layoutY="31.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Danh Sach" textAlignment="CENTER" wrappingWidth="169.13671875" />
+      <Line endX="100.0" layoutX="434.0" layoutY="48.0" startX="-100.0" />
+      <Button layoutX="28.0" layoutY="360.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="200.0" text="Submit" />
+   </children>
+</Pane>

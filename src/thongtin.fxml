@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ThongTin">
+   <children>
+      <TextField fx:id="txtFullName" layoutX="57.0" layoutY="63.0" promptText="Full name" />
+      <TextField fx:id="txtFullEmail" layoutX="57.0" layoutY="125.0" promptText="Email" />
+      <Button layoutX="57.0" layoutY="175.0" mnemonicParsing="false" onAction="#submit" prefHeight="25.0" prefWidth="149.0" text="Submit" />
+      <Text fx:id="txtInfor" layoutX="397.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Thong tin" wrappingWidth="149.0">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Text>
+      <ListView onMouseClicked="#edit" fx:id="lv" layoutX="323.0" layoutY="63.0" prefHeight="326.0" prefWidth="263.0" />
+   </children>
+</Pane>
