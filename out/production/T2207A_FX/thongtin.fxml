@@ -1,20 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.paint.*?>
 <?import javafx.scene.text.*?>
 <?import javafx.scene.control.*?>
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ThongTin">
-   <children>
-      <TextField fx:id="txtFullName" layoutX="57.0" layoutY="63.0" promptText="Full name" />
-      <TextField fx:id="txtFullEmail" layoutX="57.0" layoutY="125.0" promptText="Email" />
-      <Button layoutX="57.0" layoutY="175.0" mnemonicParsing="false" onAction="#submit" prefHeight="25.0" prefWidth="149.0" text="Submit" />
-      <Text fx:id="txtInfor" layoutX="397.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Thong tin" wrappingWidth="149.0">
-         <font>
-            <Font size="16.0" />
-         </font>
-      </Text>
-      <ListView onMouseClicked="#edit" fx:id="lv" layoutX="323.0" layoutY="63.0" prefHeight="326.0" prefWidth="263.0" />
-   </children>
+    <children>
+        <TextField fx:id="txtFullName" layoutX="37.0" layoutY="54.0" promptText="full name" />
+        <TextField fx:id="txtEmail" layoutX="37.0" layoutY="119.0" promptText="email" />
+        <Button layoutX="37.0" layoutY="169.0" mnemonicParsing="false" onAction="#submit" text="Submit" textFill="#070505" />
+        <Text fx:id="txtInfo" layoutX="362.0" layoutY="48.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Thong tin " wrappingWidth="163.6708984375">
+            <font>
+                <Font size="17.0" />
+            </font>
+        </Text>
+        <TableView fx:id="tbview" layoutX="255.0" layoutY="64.0" prefHeight="272.0" prefWidth="302.0">
+            <columns>
+                <TableColumn fx:id="cfullname" prefWidth="121.0" text="FullName" />
+                <TableColumn fx:id="cemail" prefWidth="92.0" text="Email" />
+                <TableColumn fx:id="cAction" prefWidth="88.0" text="Action" />
+            </columns>
+        </TableView>
+    </children>
 </Pane>

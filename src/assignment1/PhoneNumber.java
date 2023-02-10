@@ -1,21 +1,31 @@
+package assignment1;
+
+import assignment1.Phone;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
-import javafx.scene.control.ListView;
-import javafx.scene.control.TextField;
+import javafx.fxml.Initializable;
+import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 
+import java.net.URL;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.ResourceBundle;
 
-public class PhoneNumber {
+public class PhoneNumber implements Initializable {
 
     public TextField txtName;
     public TextField txtTelephone;
-    public ListView<Phone> nb;
+    public static TextField stName;
+    public static TextField stTelephone;
     public ObservableList<Phone> listNumber = FXCollections.observableArrayList();
-    public Phone editNumber;
-    public boolean ascending=true;
+    public static Phone editNumber;
+    public TableView<Phone> tbview;
+    public TableColumn<Phone,String>  pname;
+    public TableColumn<Phone,String> ptelephone;
+    public TableColumn<Phone, Button> paction;
 
     public void submit(ActionEvent actionEvent) {
         String n=txtName.getText();
@@ -31,8 +41,8 @@ public class PhoneNumber {
                 }
             }
         }
-        nb.setItems(listNumber);
-        nb.refresh();
+        tbview.setItems(listNumber);
+        tbview.refresh();
         editNumber=null;
         clearInput();
     }
@@ -42,27 +52,17 @@ public class PhoneNumber {
     }
 
     public void editnb(MouseEvent mouseEvent) {
-        editNumber=nb.getSelectionModel().getSelectedItem();
+//        editNumber=nb.getSelectionModel().getSelectedItem();
         txtName.setText(editNumber.getName());
         txtTelephone.setText(editNumber.getTelephone());
     }
 
-    public void sout(ActionEvent actionEvent) {
-        if(ascending){
-            Collections.sort(listNumber, new Comparator<Phone>() {
-                @Override
-                public int compare(Phone o1, Phone o2) {
-                    return o1.name.compareTo(o2.name);
-                }
-            });
-        }else {
-            Collections.sort(listNumber, new Comparator<Phone>() {
-                @Override
-                public int compare(Phone o1, Phone o2) {
-                    return o2.name.compareTo(o1.name);
-                }
-            });
-        }
-        ascending=!ascending;
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        pname.setCellValueFactory(new PropertyValueFactory<>("name"));// lấy dữ liệu từ lớp student
+        ptelephone.setCellValueFactory(new PropertyValueFactory<>("telephone"));
+        paction.setCellValueFactory(new PropertyValueFactory<>("edit"));
+        stName=txtName;
+        stTelephone=txtTelephone;
     }
 }
