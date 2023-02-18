@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="assignment1.PhoneNumber">
+   <children>
+      <Text layoutX="343.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Danh sach" textAlignment="CENTER" wrappingWidth="158.13671875" />
+      <TextField fx:id="txtName" layoutX="74.0" layoutY="40.0" promptText="Name" />
+      <TextField fx:id="txtTelephone" layoutX="74.0" layoutY="94.0" promptText="Telephone" />
+      <Button layoutX="124.0" layoutY="158.0" mnemonicParsing="false" onAction="#submit" prefHeight="25.0" prefWidth="92.0" text="Submit" />
+      <Button layoutX="461.0" layoutY="361.0" mnemonicParsing="false" onAction="#sout" prefHeight="25.0" prefWidth="92.0" text="Sout" />
+      <TableView fx:id="tbview" layoutX="322.0" layoutY="53.0" prefHeight="200.0" prefWidth="227.0">
+        <columns>
+          <TableColumn fx:id="pname" prefWidth="75.0" text="Name" />
+          <TableColumn fx:id="ptelephone" prefWidth="75.0" text="Telephone" />
+            <TableColumn fx:id="paction" prefWidth="75.0" text="Action" />
+        </columns>
+      </TableView>
+   </children>
+</Pane>

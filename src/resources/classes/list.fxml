@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ClassesController">
+   <children>
+      <Text layoutX="142.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Class List" textAlignment="CENTER" wrappingWidth="315.13671875">
+         <font>
+            <Font size="28.0" />
+         </font>
+      </Text>
+      <TableView fx:id="tbClasses" layoutX="42.0" layoutY="75.0" prefHeight="293.0" prefWidth="517.0">
+        <columns>
+          <TableColumn fx:id="cId" prefWidth="75.0" text="ID" />
+          <TableColumn fx:id="cName" prefWidth="256.0" text="Name" />
+            <TableColumn fx:id="cRoom" prefWidth="110.0" text="Room" />
+            <TableColumn fx:id="cAction" minWidth="0.0" prefWidth="74.0" text="Action" />
+        </columns>
+      </TableView>
+      <Button layoutX="42.0" layoutY="33.0" mnemonicParsing="false" onAction="#back" style="-fx-background-color: #d04646;" text="&lt;&lt;Back" textFill="WHITE" />
+      <Button onAction="#create" layoutX="532.0" layoutY="33.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="27.0" style="-fx-background-color: #d04646;" text="+" textFill="WHITE" />
+   </children>
+</Pane>
