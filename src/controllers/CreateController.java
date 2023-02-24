@@ -1,6 +1,8 @@
 package controllers;
 
+import daopattern.ClassesDAO;
 import database.Database;
+import entities.Classes;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -21,18 +23,20 @@ public class CreateController {
     }
 
     public void submit(ActionEvent event) {
-        try {
+        try{
             String name = txtName.getText();
             String room = txtRoom.getText();
-            if (name.isEmpty() || room.isEmpty()) {
-                throw new Exception("Vui long dien day du thong tin");
+            if(name.isEmpty() || room.isEmpty()){
+                throw new Exception("Vui lòng điền đẩy đủ thông tin");
             }
-            Database db = Database.getInstance();
-            Statement stt = db.getStatement();
-            String sql = "insert into lophoc(name,room)values('" + name + "','" + room + "')";
-            stt.executeUpdate(sql);
-            backToClass(null);
-        } catch (Exception e) {
+
+            Classes c = new Classes(null,name,room);
+            ClassesDAO cd = ClassesDAO.getInstance();
+            if(cd.create(c))
+                backToClass(null);
+            else
+                throw new Exception("Không thể tạo lớp học");
+        }catch (Exception e){
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setHeaderText(e.getMessage());
             alert.show();
