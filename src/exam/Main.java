@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        ListCustomer cus = new ListCustomer();
+        CustomerController cus = new CustomerController();
         Scanner sc = new Scanner(System.in);
         int select = 0;
         do {
